@@ -24,11 +24,11 @@ function showItensList() {
         sectionList.innerHTML += `
             <div class="item">
                     <div>
-                        <input type="checkbox" name="list" id="item-${index}">
+                        <div class="custom-checkbox" onclick="checkItem('${item.name}')">
                         <div class="custom-checkbox">
                             <img src="./assets01/assets/checked.svg" alt="checked">
                         </div>
-                        <label for="item-${index}">${item.name}</label>
+                          <label for="item-${index}" onclick="checkItem('${item.name}')">${item.name}</label>
                     </div>
                     <button>
                         <img src="./assets01/assets/trash-icon.svg" alt="trash icon">
