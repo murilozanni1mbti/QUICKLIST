@@ -24,7 +24,7 @@ function showItensList() {
         sectionList.innerHTML += `
             <div class="item">
                     <div>
-                        <div class="custom-checkbox" onclick="checkItem('${item.name}')">
+                       <input type="checkbox" name="list" id="item-${index}" ${item.checked ? 'checked' : ''}>
                         <div class="custom-checkbox">
                             <img src="./assets01/assets/checked.svg" alt="checked">
                         </div>
@@ -52,5 +52,20 @@ function removeItem(itemName) {
     setTimeout(() => {
         divWarning.classList.add("hide-warning")
     }, 4000)
+    showItensList()
+}
+
+function checkItem(itemName) {
+    const item = items.find((item) => item.name === itemName)
+
+    // if (item.checked) {
+    //      item.checked = false
+    //} else {
+    //      item checked = true
+    //}
+
+    // item checked ? item.checked = false : item.checked = true
+
+    item.checked = !item.checked
     showItensList()
 }
